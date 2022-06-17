@@ -1,0 +1,60 @@
+ /* Grid task in CSS Grid  */
+ /* global reset */
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* webpage restyling */
+html{
+    font-size: 62.5%;
+    /* height: 100%; */
+    width: 100%;
+}
+body{
+    line-height:1.8;
+    background-color: #1A1C28;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 100%;
+}
+/* unordered list container */
+.container{
+    width:50%;
+    display: grid;
+    padding: 4rem 0;
+    margin: 2rem auto;
+    gap: 1rem;
+    grid-template-columns: 25rem 5rem 20rem;
+    grid-template-rows: 20rem 10rem 12rem;
+    grid-template-areas: 
+    "o o e"
+    "g b b"
+    "g l l";
+}
+.orange{
+    background-color: #EB5020;
+    border: solid .25rem #EB5020;
+    grid-area: o;
+}
+.yellow{
+    background-color: #FFA401;
+    border: solid .25rem #FFA401;
+    grid-area: e;
+}
+.green{
+    background-color: #05AA42;
+    border: solid .25rem #05AA42;
+    grid-area: g;
+}
+.blue{
+    background-color: #01AEFD;
+    border: solid .25rem #01AEFD;
+    grid-area: b;
+}
+.l-blue{
+    background-color: #01AEFD;
+    border: solid .25rem #01AEFD;
+    grid-area: l;
+}

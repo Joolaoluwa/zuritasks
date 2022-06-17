@@ -1,0 +1,117 @@
+/* Flex box task */
+
+/* global reset */
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* styling the web page globally */
+html{
+    font-size: 62.5%;
+    width: 100%;
+}
+
+/* body */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.8;
+    width: 100%;
+}
+
+/* main content(main-tag) */
+#container{
+    width: 100%;
+    display: flex;
+    margin: 3rem;
+    padding: 2rem;
+    border-radius: .5rem;
+    /* justify-content: center; */
+    flex: 1 1 30rem;
+    flex-wrap: wrap;
+}
+
+/* content styling */
+/* sedan article */
+.sedan{
+    padding: 5rem;
+    background-color: #00403E;
+    border-radius: .45rem;
+
+}
+/* suv article */
+.suvs{
+    padding: 5rem;
+    background-color: #006971;
+    border-radius: .45rem;
+    
+   
+}
+/* luxury article */
+.luxury{
+    padding: 5rem;
+    background-color: #E28525;
+    border-radius: .45rem;
+    
+}
+/* heading */
+.heading{
+    color: white;
+    padding: 3rem 0 0;
+    font-size: 2rem;
+}
+/* paragraph */
+.para{
+    color: white;
+    width: 10rem;
+    padding: 2rem 0;
+    margin: 3rem 0;
+}
+
+/* general links styling */
+a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    width: 2rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 2.5rem;
+    justify-content: flex-end;
+}
+/* sedan link styling */
+a.sedans{
+color: #00403E;
+}
+/* suv link styling */
+a.suv{
+    color: #006971;
+}
+/* luxury link styling */
+a.luxurys{
+    color: #E28525;
+}
+/* sedan link styling */
+a.sedans:active{
+    border:  white solid .15rem;
+    background-color: #00403E;
+    color: white;
+}
+/* suv link styling */
+a.suv:active{
+    border:  solid .15rem white;
+    background-color: #006971;
+    color: white;
+}
+/* luxury link styling */
+a.luxurys:active{
+    border:  solid .15rem white;
+    background-color: #E28525;
+    color: white;
+}
+
+
+
+

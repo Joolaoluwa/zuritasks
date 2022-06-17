@@ -1,0 +1,263 @@
+/* the media query lecture */
+/* Media queries are made of two parts; the "@" rule and the media feature rule, the width we target is the width on the users view port or the width on the browsers. Break-points are the points the design changes. and they can be used  differently. Dont try to create tons of media queries for every device width that exists. Choose break points based on tehr design. 700px 9992px 1392px for devices. min-width defines the minimum width for an item, max-width defines the maximum width of an item. Use min-width mainly in your media queries. A media query can be used to check many things, such as:
+* width and height of the viewport
+* width and height of the device
+* orientation(is the tablet/phone in landscape or potrait mode?)
+* resolution
+ A media query consists of a media type and can contain one or more expressions, which resolve to either true or false 
+ The result of the query is true if the specified media type matches the type of device the document is being displayed on and all expressions in the media query are true. When a media query is tru, the corresponding style sheet rules are applied, following the normal cascading rules.
+ Unless we use the "not" or "only" operators, the media type is optional and "all" type will be implied.
+ CSS3 MEDIA TYPES
+ * all - used for all media type devices
+*print - used for printers
+*screen - used for computer screens, tablets,smart-phones
+speech - used for screenreaders that "reads" the page out loud.
+ */
+ /* global reset */
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* styling the web page globally */
+html{
+    font-size: 62.5%;
+    width: 100%;
+    height: 100%;
+}
+
+/* body */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.8;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+/* main-content */
+#container{
+    display: flex;
+    flex-direction: column;
+    /* gap: rem; */
+    width: 50%;
+    height: 100%;
+    background-color: #FF7978;
+    border: .25rem solid #FF7978;
+    background-image: url(./images/bg-intro-desktop.png);
+    background-size: cover;
+    background-position: fixed;
+    background-repeat: no-repeat;
+    margin: 0rem auto;
+    /* padding: 2rem auto 2rem; */
+}
+/* heading */
+.heading{
+  width:80%;
+  color: white;
+  /* width:80%; */
+  font-size: 1.5rem;
+  /* margin: 4rem auto; */
+  /* justify-content: center;
+  align-content: center; */
+  margin: 1rem auto 0;
+}
+
+/* paragraph */
+.section{
+  color: white;
+  /* justify-content: center; */
+  width: 100%;
+  margin: 1rem auto 0rem;
+}
+
+/* button */
+.button{
+    width: 80%;
+    padding: 2rem;
+    background-color: #5D54A3;
+    border: none;
+    border-radius: .5rem;
+    box-shadow: .15rem .1rem .15rem grey;
+    margin: 2rem auto 2rem;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+/* link span style */
+.first{
+    font-size: 1.5rem;
+}
+/* div container */
+/* form styling */
+.form{
+   background-color: white;
+   margin: 0 auto 0;
+   width: 80%;
+   height: 60%;
+   border-radius: .5rem;
+   padding: .65rem;
+}
+/* input style */
+.form input{
+    display: block;
+}
+/* input type style */
+input[type=text], input[type=email], input[type=password],input[type=submit]{
+    margin: 1.5rem auto 0;
+    width: 80%;
+    padding: 1.5rem;
+    border-radius: .65rem;
+}
+input[type=submit]{
+    background-color: #77E2B4;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+   box-shadow: .25rem .25rem .25rem grey;
+}
+p{
+    width: 80%;
+    margin: 0.5rem auto 0;
+}
+input[type=text]:focus, input[type=email]:focus, input[type=password]:focus,input[type=submit]:focus{
+    outline: none;
+    border: none;
+}
+input:required{
+    background-image: url(./images/icon-error.svg);
+    /* display: inline-block; */
+    background-repeat: no-repeat;
+    background-position: right;
+}
+/* icon styling */
+/* .form .icon{
+    position: absolute;
+    left: 5rem;
+    right: 5rem;
+} */
+/* form span style */
+.second{
+    color: grey;
+}
+.third{
+    color: orangered;
+    font-size: 1.25rem;
+     /*  700px 9992px 1392px  */
+}
+@media all and (min-width:80rem) {
+    #container{
+        display: grid;
+        grid-template-areas: 
+        "a b"
+        "a f";
+        grid-template-rows: 7rem;
+        gap: 1rem;
+        width: 80%;
+        height: 80%;
+        background-color: #FF7978;
+        border: .25rem solid #FF7978;
+        background-image: url(./images/bg-intro-desktop.png);
+        background-size: cover;
+        background-position: fixed;
+        background-repeat: no-repeat;
+        margin: 4rem auto;
+        /* padding: 2rem auto 2rem; */
+    }
+    /* article */
+    .article{
+        width: 50%;
+        height: 70%;
+        margin: 10rem auto;
+        grid-area: a;
+        
+    }
+    /* heading */
+    .heading{
+      width:80%;
+      color: white;
+      font-size:2.5rem;
+      margin: 9rem auto 0 ;
+      /* justify-content: center;
+      align-content: center; */
+    }
+    
+    /* paragraph */
+    .section{
+      color: white;
+      /* justify-content: center; */
+      width: 80%;
+      margin: 1rem auto 0rem;
+    }
+    
+    /* button */
+    .button{
+        grid-area: b;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        margin: 8rem -10rem 0;
+        background-color: #5D54A3;
+        border: none;
+        border-radius: .5rem;
+        box-shadow: .15rem .1rem .15rem grey;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+        font-size: 1rem;
+        text-align: center;
+    }
+    /* link span style */
+    .first{
+        font-size: 1.5rem;
+    }
+    /* div container */
+    /* form styling */
+    .form{
+        grid-area: f;
+       background-color: white;
+       width: 100%;
+       height:70%;
+        margin: 8rem -10rem;
+        padding: 1rem;
+      border-radius: .65rem;
+    }
+    /* input style */
+    .form input{
+        display: block;
+    }
+    /* input type style */
+    input[type=text], input[type=email], input[type=password],input[type=submit]{
+        margin: 2rem 0 0;
+        padding: 1rem;
+        width: 100%;
+       
+    }
+    input[type=submit]{
+        background-color: #77E2B4;
+        outline: none;
+        border: none;
+        color: white;
+        font-size: 1rem;
+       
+    }
+    p{
+        width: 100%;
+        margin: 0 auto 0;
+    }
+    input[type=text]:focus, input[type=email]:focus, input[type=password]:focus,input[type=submit]:focus{
+        outline: none;
+        border: none;
+    }
+}
+/* second media query */
+@media screen and (min-width:60rem){
+
+    
+}
